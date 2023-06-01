@@ -96,7 +96,7 @@ using namespace Teuchos;
 using namespace Xpetra;
 
 // typedefs
-typedef MultiVector<double,int,FROSch::DefaultGlobalOrdinal,KokkosClassic::DefaultNode::DefaultNodeType> multivector_type;
+typedef MultiVector<double,int,FROSch::DefaultGlobalOrdinal,Tpetra::KokkosClassic::DefaultNode::DefaultNodeType> multivector_type;
 typedef multivector_type::scalar_type scalar_type;
 typedef multivector_type::local_ordinal_type local_ordinal_type;
 typedef multivector_type::global_ordinal_type global_ordinal_type;
