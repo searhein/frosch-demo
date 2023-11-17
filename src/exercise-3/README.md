@@ -2,7 +2,7 @@
 
 In exercise 3, instead of using a one-level Schwarz preconditioner to accelerate the convergence of the iterative solver as in exercise 2, we use a two-level Schwarz GDSW preconditioner (see below for references):
 
-1. The one-level Schwarz preconditioner object is constructed using the matrix `A` and parameter list `precList` objects:
+1. The two-level Schwarz preconditioner object is constructed using the matrix `A` and parameter list `precList` objects:
 
    ```c++
    RCP<twolevelpreconditioner_type> prec(new twolevelpreconditioner_type(A,precList));
@@ -16,7 +16,7 @@ In exercise 3, instead of using a one-level Schwarz preconditioner to accelerate
      typedef FROSch::TwoLevelPreconditioner<scalar_type,local_ordinal_type,global_ordinal_type,node_type> twolevelpreconditioner_type;
      ```
 
-2. As the one-level Schwarz preconditioner, the two-level Schwarz preconditioner with GDSW coarse space is set up using `initialize()` and `compute()`. For correctly setting up the GDSW coarse space, we have to specify the dimension of the problem (integer `dimension`), the number of degrees of freedom per node (integer `dofspernode`), and the overlap (parameter `"Overlap"` from the parameter list); the number of degrees of freedom per node depends on the dimension of the problem and the equation.
+2. Same as the one-level Schwarz preconditioner, the two-level Schwarz preconditioner with GDSW coarse space is set up using `initialize()` and `compute()`. For correctly setting up the GDSW coarse space, we have to specify the dimension of the problem (integer `dimension`), the number of degrees of freedom per node (integer `dofspernode`), and the overlap (parameter `"Overlap"` from the parameter list); the number of degrees of freedom per node depends on the dimension of the problem and the equation.
 
    ```c++
    prec->initialize(dimension,dofspernode,precList->get("Overlap",1));
