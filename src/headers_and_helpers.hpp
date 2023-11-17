@@ -67,7 +67,7 @@
 #include <Thyra_TpetraThyraWrappers.hpp>
 #include <Thyra_VectorBase.hpp>
 #include <Thyra_VectorStdOps.hpp>
-#ifdef HAVE_SHYLU_DDFROscalar_typeH_EPETRA
+#ifdef HAVE_SHYLU_DDFROSCH_EPETRA
 #include <Thyra_EpetraLinearOp.hpp>
 #endif
 #include <Thyra_VectorSpaceBase_def.hpp>
@@ -77,7 +77,7 @@
 #include <Xpetra_Map.hpp>
 #include <Xpetra_CrsMatrixWrap.hpp>
 #include <Xpetra_DefaultPlatform.hpp>
-#ifdef HAVE_SHYLU_DDFROscalar_typeH_EPETRA
+#ifdef HAVE_SHYLU_DDFROSCH_EPETRA
 #include <Xpetra_EpetraCrsMatrix.hpp>
 #endif
 #include <Xpetra_Parameters.hpp>
@@ -96,7 +96,7 @@ using namespace Teuchos;
 using namespace Xpetra;
 
 // typedefs
-typedef MultiVector<double,int,FROSch::DefaultGlobalOrdinal,Tpetra::KokkosClassic::DefaultNode::DefaultNodeType> multivector_type;
+typedef MultiVector<double,int,FROSch::DefaultGlobalOrdinal,KokkosClassic::DefaultNode::DefaultNodeType> multivector_type;
 typedef multivector_type::scalar_type scalar_type;
 typedef multivector_type::local_ordinal_type local_ordinal_type;
 typedef multivector_type::global_ordinal_type global_ordinal_type;
